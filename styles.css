@@ -1,0 +1,21 @@
+body{
+    background-image: -webkit-linear-gradient(65deg, #f88020 50%, #fbe3b9 50%);
+    min-height: 1000px;
+    letter-spacing: 0.2em;
+    font-size: 0.8em;
+}
+
+
+.container{
+    max-width: 400px;
+    
+}
+
+.icon{
+    position: relative;
+    top: -50px;
+    border-radius: 50%;
+    width: 100px;
+    margin-bottom: -50px;
+
+}
