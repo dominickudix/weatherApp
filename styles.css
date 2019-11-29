@@ -11,6 +11,13 @@ body{
     
 }
 
+img {
+    vertical-align: middle;
+    border-style: none;
+    position: relative;
+    top: -25px;
+}
+
 .icon{
     position: relative;
     top: -50px;
