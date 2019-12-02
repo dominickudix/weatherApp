@@ -8,21 +8,18 @@ body{
 
 .container{
     max-width: 400px;
-    
-}
-
-img {
-    vertical-align: middle;
-    border-style: none;
-    position: relative;
-    top: -25px;
+   
 }
 
 .icon{
     position: relative;
-    top: -50px;
+    top: -100px;
     border-radius: 50%;
     width: 100px;
     margin-bottom: -50px;
+}
 
+.time{
+    position: relative;
+    top: -30px;
 }
