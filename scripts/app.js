@@ -1,5 +1,4 @@
-//jshint esversion:7
-//jshint esversion:8
+
 const cityForm = document.querySelector('form.city');
 const card = document.querySelector('.card');
 const details = document.querySelector('.details');
@@ -7,14 +6,7 @@ const time = document.querySelector('img.time');
 const icon = document.querySelector('.icon img');
 
 const updateUI = (data) => {
-    //simpler way of refering to the data
-    /* const cityDets = data.cityDets;
-    const weather = data.weather; */
-
-//destructuring properties from an object
-//only works if the object names have the name properties as above
     const {cityDets, weather} = data;
-    console.log(data);
     
     //update details template
     details.innerHTML = `<h5 class="my-3">${cityDets.LocalizedName}</h5>
@@ -34,22 +26,6 @@ icon.setAttribute('src', iconSrc);
 //more concise method using a tenary operator
 let timeSRC = weather.IsDayTime ? 'img/day.svg' : 'img/night.svg';
 time.setAttribute('src', timeSRC);
-
-//this is long method
-/* let timeSRC = null;
-if(weather.IsDayTime){
-timeSRC = 'img/day.svg';
-}else {
-    timeSRC = 'img/night.svg';
-}
-time.setAttribute('src', timeSRC); */
-
-
-
-
-
-
-
 
   //remove the d-none class if present
   if(card.classList.contains('d-none')){
@@ -86,4 +62,15 @@ cityForm.addEventListener('submit', (e) => {
             console.log(err);
         });
 
+
+        //set Local Storage
+        localStorage.setItem('city', city);
 });
+//render page using the object in local storage
+if(localStorage.getItem('city')){
+    updateCity(localStorage.getItem('city'))
+    .then(data => updateUI(data))
+    .catch(err => {
+        console.log(err);
+    });
+}
